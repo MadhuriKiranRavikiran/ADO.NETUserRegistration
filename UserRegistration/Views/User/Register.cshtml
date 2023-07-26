@@ -1,0 +1,284 @@
+﻿@model UserManagement.DAL.Model.UserModel
+
+@{
+    ViewBag.Title = "Register as User";
+}
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-t2IpeoZO1MOIzI0a+/tD1gEM9WvhZaLRsAh3lm1CUj+8jD59eTbB3rHJe9oH47RA1F6n4qG2SjAapVpPtg0brg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+    body {
+        background: linear-gradient(#6DADDB, #313131);
+        margin:0;
+        padding:0;
+    }
+
+    .square-card-container {
+        width: 600px;
+        height: 500px;
+        margin: 10px auto;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .gradient-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        border-radius: 10px;
+        background: linear-gradient(#6DADDB, #313131);
+        pointer-events: none;
+    }
+
+    .square-card {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+       /* padding: 2px;*/
+    }
+
+
+        .square-card .card-header {
+            background-color: transparent;
+            border-bottom: 1px solid #ccc; 
+            text-align: left;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+
+
+        .square-card .card-footer {
+            background-color: transparent;
+            text-align: right;
+            margin-top: 10px;
+            border-top: 1px solid #ccc;
+            border-bottom: none;
+            border-left: none;
+            border-right: none;
+            margin-bottom: 0;
+            padding: 0;
+            height: 40px;
+            position: relative;
+        }
+
+
+        .square-card .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+    .form-group {
+        margin-bottom: 5px;
+    }
+
+    .btn-signup {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 5px 10px;
+        cursor: pointer;
+        float: right; 
+    }
+
+    .btn-signup-line {
+        width: 100%;
+        height: 1px;
+        background-color: #ccc;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+
+    label {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 5px;
+        width: 150px;
+    }
+
+    .form-field {
+        display: flex;
+        align-items: center;
+    }
+
+    .circular-image-placeholder {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1px;
+    }
+
+    .image-container {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .image-preview-text {
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .profile-pic-text {
+        font-weight: bold;
+        font-size: 14px;
+        margin: 5px auto;
+    }
+
+    .choose-file-text {
+        font-size: 14px;
+    }
+
+    #preview {
+        max-width: 100px;
+        max-height: 100px;
+        border-radius: 2px;
+        margin: 0 auto;
+    }
+    .close-button {
+        background-color: #f2f2f2; 
+        color: #808080; 
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+        float: right;
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 50%;
+        outline: none;
+        margin: 5px; 
+    }
+
+    .close-button:hover {
+     background-color: #dcdcdc; 
+     }
+    .file-input {
+        display: block;
+        margin: 0 auto;
+    }
+</style>
+<div class="square-card-container">
+    <div class="gradient-background"></div>
+    <div class="square-card card">
+        <div class="card-header" style="font-weight:bold">
+            Register as User
+            <button type="button" class="close-button" onclick="closeRegisterPage()">&times;</button>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm("Register", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group" style="text-align:center;">
+                    <div class="image-preview-text">Image Preview</div>
+                </div>
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="circular-image-placeholder">
+                            <!-- The image preview will be shown here -->
+                            <img id="preview" src="" alt="Preview" style="align-content: baseline" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        <div class="profile-pic-text">Your Profile Pic</div>
+                    </div>
+                </div>
+
+                <div class="form-group" style="text-align: center;">
+                    <div class="form-field">
+                        <input type="file" name="Image Preview" class="file-input" onchange="previewImage(event)" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        @Html.Label("Username:")
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "User Name" })
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        @Html.Label("Email Address:")
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Email Id" })
+                        @Html.ValidationMessageFor(m => m.Email)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        @Html.Label("Password:")
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-field">
+                        @Html.Label("Confirm Password:")
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "Password" })
+                        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn-signup" style="margin-top: 5px;">
+                        Sign Up
+                    </button>
+                </div>
+            }
+        </div>
+        </div>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var image = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function () {
+                document.getElementById('preview').src = reader.result;
+            }
+            reader.readAsDataURL(image);
+        }
+
+        function closeRegisterPage() {
+            window.close();
+        }
+
+    </script>
+
