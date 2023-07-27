@@ -2,15 +2,22 @@
 using UserManagement.BLL;
 using UserManagement.DAL;
 using UserManagement.DAL.Model;
+using System.Data.Entity;
 
 public class UserController : Controller
 {
     private readonly UserManager userManager;
+    private readonly UserManagementDBEntities1 dbContext;
+
 
     public UserController()
     {
-        var dataAccess = new UserDataAccess();
-        userManager = new UserManager(dataAccess);
+        //var dataAccess = new UserDataAccess();
+        //userManager = new UserManager(dataAccess);
+        {
+            dbContext = new UserManagementDBEntities1(); 
+            userManager = new UserManager(dbContext);
+        }
     }
     // GET: Home
     public ActionResult Index()

@@ -20,3 +20,9 @@ C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\obj\Debug\UserMa
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\obj\Debug\UserManagement.BLL.csproj.CopyComplete
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\obj\Debug\UserManagement.BLL.dll
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\obj\Debug\UserManagement.BLL.pdb
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\UserManagement.DAL.dll.config
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\UserManagement.BLL.dll.config
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\EntityFramework.dll
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\EntityFramework.xml
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.BLL\bin\Debug\EntityFramework.SqlServer.xml

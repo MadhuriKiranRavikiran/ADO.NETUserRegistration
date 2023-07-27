@@ -131,6 +131,7 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto 1px;
+        overflow: hidden;
     }
 
     .image-container {
@@ -160,7 +161,7 @@
     #preview {
         max-width: 100px;
         max-height: 100px;
-        border-radius: 2px;
+        border-radius: 50%;
         margin: 0 auto;
     }
     .close-button {
@@ -207,7 +208,7 @@
                     <div class="form-field">
                         <div class="circular-image-placeholder">
                             <!-- The image preview will be shown here -->
-                            <img id="preview" src="" alt="Preview" style="align-content: baseline" />
+                            <img id="preview" src="" alt="" style="align-content: baseline; max-width: 100px; max-height: 100px;" />
                         </div>
                     </div>
                 </div>
@@ -220,7 +221,7 @@
 
                 <div class="form-group" style="text-align: center;">
                     <div class="form-field">
-                        <input type="file" name="Image Preview" class="file-input" onchange="previewImage(event)" />
+                        <input type="file" name="ImagePreview" class="file-input" onchange="previewImage(event)" />
                     </div>
                 </div>
 
@@ -273,12 +274,26 @@
             reader.onload = function () {
                 document.getElementById('preview').src = reader.result;
             }
-            reader.readAsDataURL(image);
+            if (image) {
+                reader.readAsDataURL(image);
+            }
+           /* reader.readAsDataURL(image);*/
         }
 
         function closeRegisterPage() {
             window.close();
         }
+        function previewImage(event) {
+            var image = event.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function () {
+                document.getElementById('preview').src = reader.result;
+            }
+            reader.readAsDataURL(image);
+            document.getElementById('preview').style.maxWidth = '100px'; 
+            document.getElementById('preview').style.maxHeight = '100px'; 
+        }
+
 
     </script>
 

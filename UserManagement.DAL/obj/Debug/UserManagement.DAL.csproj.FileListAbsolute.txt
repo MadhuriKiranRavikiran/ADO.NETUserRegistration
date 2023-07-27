@@ -4,3 +4,10 @@ C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\obj\Debug\UserMa
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\obj\Debug\UserManagement.DAL.csproj.CoreCompileInputs.cache
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\obj\Debug\UserManagement.DAL.dll
 C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\obj\Debug\UserManagement.DAL.pdb
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\UserManagement.DAL.dll.config
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\EntityFramework.dll
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\EntityFramework.xml
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\obj\Debug\UserManagement.DAL.csproj.CopyComplete
+C:\Users\madhu\source\repos\UserRegistration\UserManagement.DAL\bin\Debug\Microsoft.Web.Infrastructure.dll
